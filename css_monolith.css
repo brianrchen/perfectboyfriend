@@ -21,11 +21,29 @@
 }
 
 .chatMessages {
+    height: 23em;
+    overflow-y: scroll;
 
 }
 
 .chatSingleMessage {
+    padding: 0.625em;
+    border-radius: 1em;
+    margin-bottom: 0.625em;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
 
+.messageSender {
+    font-weight: bold;
+    margin-bottom: 0.31em;
+}
+
+.messageText {
+    font-size: 1em;
+    margin-bottom: 0.31em;
+    word-wrap: break-word;
 }
 
 .button {
