@@ -46,6 +46,20 @@
     word-wrap: break-word;
 }
 
+.blueBg {
+    background-color: #1c9bef;
+}
+
+.grayBg {
+    background-color: #3d5365;
+}
+
+.chatInputForm {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+}
+
 .button {
     border: none;
     padding: 0.625em;
