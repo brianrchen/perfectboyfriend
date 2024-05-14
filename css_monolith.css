@@ -1,0 +1,15 @@
+
+.pageContainer {
+    display: flex;
+    background-color: black;
+
+    /* margin: 70 70 70 70; */
+}
+
+.shawnContainer {
+    max-width: 800;
+}
+
+.chatBox {
+    width: 200;
+}
