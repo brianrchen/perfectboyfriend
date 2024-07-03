@@ -3,12 +3,12 @@
 // const johnSelectorBtn = document.querySelector('#john-selector')
 // const janeSelectorBtn = document.querySelector('#jane-selector')
 // const chatHeader = document.querySelector('.chat-header')
-const chatMessages = document.querySelector('.chatMessages')
-const chatInputForm = document.querySelector('.chatInputForm')
-const chatInputBox = document.querySelector('.chatInputBox')
+const chatMessages = document.querySelector('.chatMessages');
+const chatInputForm = document.querySelector('.chatInputForm');
+const chatInputBox = document.querySelector('.chatInputBox');
 // const clearChatBtn = document.querySelector('.clear-chat-button')
 
-const messages = JSON.parse(localStorage.getItem('messages')) || []
+const messages = JSON.parse(localStorage.getItem('messages')) || [];
 
 const createChatMessageElement = (message) => `
   <div class="message ${message.sender === 'User' ? 'blue-bg' : 'gray-bg'}">
@@ -20,7 +20,7 @@ const createChatMessageElement = (message) => `
 
 window.onload = () => {
   messages.forEach((message) => {
-    chatMessages.innerHTML += createChatMessageElement(message)
+    chatMessages.innerHTML += createChatMessageElement(message);
   })
 }
 
@@ -48,9 +48,7 @@ window.onload = () => {
 // janeSelectorBtn.onclick = () => updateMessageSender('Jane')
 
 const sendMessage = (senderName, messageText) => {
-  e.preventDefault()
-
-  const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+  const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   const message = {
     sender: senderName,
     text: messageText,
@@ -58,19 +56,18 @@ const sendMessage = (senderName, messageText) => {
   }
 
   /* Save message to local storage */
-  messages.push(message)
-  localStorage.setItem('messages', JSON.stringify(messages))
+  messages.push(message);
+  localStorage.setItem('messages', JSON.stringify(messages));
 
   /* Add message to DOM */
-  chatMessages.innerHTML += createChatMessageElement(message)
+  chatMessages.innerHTML += createChatMessageElement(message);
 
   /*  Scroll to bottom of chat messages */
-  chatMessages.scrollTop = chatMessages.scrollHeight
-
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 const sendUserMessage = (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
   sendMessage('User', chatInputBox.value);
 
