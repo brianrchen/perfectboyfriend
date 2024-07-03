@@ -5,7 +5,7 @@
 // const chatHeader = document.querySelector('.chat-header')
 const chatMessages = document.querySelector('.chatMessages')
 const chatInputForm = document.querySelector('.chatInputForm')
-const chatInput = document.querySelector('.chatInput')
+const chatInputBox = document.querySelector('.chatInputBox')
 // const clearChatBtn = document.querySelector('.clear-chat-button')
 
 const messages = JSON.parse(localStorage.getItem('messages')) || []
@@ -53,7 +53,7 @@ const sendMessage = (e) => {
   const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
   const message = {
     sender: 'User',
-    text: chatInput.value,
+    text: chatInputBox.value,
     timestamp,
   }
 
@@ -69,6 +69,7 @@ const sendMessage = (e) => {
 
   /*  Scroll to bottom of chat messages */
   chatMessages.scrollTop = chatMessages.scrollHeight
+
 }
 
 chatInputForm.addEventListener('submit', sendMessage)
