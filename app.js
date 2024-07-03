@@ -47,13 +47,13 @@ window.onload = () => {
 // johnSelectorBtn.onclick = () => updateMessageSender('John')
 // janeSelectorBtn.onclick = () => updateMessageSender('Jane')
 
-const sendMessage = (e) => {
+const sendMessage = (senderName, messageText) => {
   e.preventDefault()
 
   const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
   const message = {
-    sender: 'User',
-    text: chatInputBox.value,
+    sender: senderName,
+    text: messageText,
     timestamp,
   }
 
@@ -64,15 +64,27 @@ const sendMessage = (e) => {
   /* Add message to DOM */
   chatMessages.innerHTML += createChatMessageElement(message)
 
-  /* Clear input field */
-  chatInputForm.reset()
-
   /*  Scroll to bottom of chat messages */
   chatMessages.scrollTop = chatMessages.scrollHeight
 
 }
 
-chatInputForm.addEventListener('submit', sendMessage)
+const sendUserMessage = (e) => {
+  e.preventDefault()
+
+  sendMessage('User', chatInputBox.value);
+
+  /* Clear input field */
+  chatInputForm.reset();
+
+  shawnResponse();
+}
+
+function shawnResponse () {
+  sendMessage('Shawn', 'placeholder');
+}
+
+chatInputForm.addEventListener('submit', sendUserMessage);
 
 // clearChatBtn.addEventListener('click', () => {
 //   localStorage.clear()
