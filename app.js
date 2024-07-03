@@ -1,12 +1,8 @@
 // @ts-nocheck
 
-// const johnSelectorBtn = document.querySelector('#john-selector')
-// const janeSelectorBtn = document.querySelector('#jane-selector')
-// const chatHeader = document.querySelector('.chat-header')
 const chatMessages = document.querySelector('.chatMessages');
 const chatInputForm = document.querySelector('.chatInputForm');
 const chatInputBox = document.querySelector('.chatInputBox');
-// const clearChatBtn = document.querySelector('.clear-chat-button')
 
 const messages = JSON.parse(localStorage.getItem('messages')) || [];
 
@@ -23,29 +19,6 @@ window.onload = () => {
     chatMessages.innerHTML += createChatMessageElement(message);
   })
 }
-
-// let messageSender = 'John'
-
-// const updateMessageSender = (name) => {
-//   messageSender = name
-//   chatHeader.innerText = `${messageSender} chatting...`
-//   chatInput.placeholder = `Type here, ${messageSender}...`
-
-//   if (name === 'John') {
-//     johnSelectorBtn.classList.add('active-person')
-//     janeSelectorBtn.classList.remove('active-person')
-//   }
-//   if (name === 'Jane') {
-//     janeSelectorBtn.classList.add('active-person')
-//     johnSelectorBtn.classList.remove('active-person')
-//   }
-
-//   /* auto-focus the input field */
-//   chatInput.focus()
-// }
-
-// johnSelectorBtn.onclick = () => updateMessageSender('John')
-// janeSelectorBtn.onclick = () => updateMessageSender('Jane')
 
 const sendMessage = (senderName, messageText) => {
   const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -82,8 +55,3 @@ function shawnResponse () {
 }
 
 chatInputForm.addEventListener('submit', sendUserMessage);
-
-// clearChatBtn.addEventListener('click', () => {
-//   localStorage.clear()
-//   chatMessages.innerHTML = ''
-// })
