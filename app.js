@@ -52,7 +52,7 @@ const sendMessage = (e) => {
 
   const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
   const message = {
-    sender: messageSender,
+    sender: 'User',
     text: chatInput.value,
     timestamp,
   }
@@ -73,7 +73,7 @@ const sendMessage = (e) => {
 
 chatInputForm.addEventListener('submit', sendMessage)
 
-clearChatBtn.addEventListener('click', () => {
-  localStorage.clear()
-  chatMessages.innerHTML = ''
-})
+// clearChatBtn.addEventListener('click', () => {
+//   localStorage.clear()
+//   chatMessages.innerHTML = ''
+// })
